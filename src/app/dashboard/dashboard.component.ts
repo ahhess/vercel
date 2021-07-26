@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
       .subscribe(heroes => {
         this.heroes = heroes;
         this.heroes.sort((a, b) => b.likes - a.likes);
-        this.heroes = heroes.slice(1, 5);
+        this.heroes = heroes.slice(0, 4);
       });
   }
 }
