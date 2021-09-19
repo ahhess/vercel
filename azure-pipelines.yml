@@ -20,3 +20,10 @@ steps:
     npm install
     ng build --prod
   displayName: 'npm install and build'
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Nutzungsbasierte Bezahlung (004f8587-b1ea-4229-b41d-7a08f291c40c)'
+    appType: 'webApp'
+    WebAppName: 'ahhess-azure-devops-toh'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
